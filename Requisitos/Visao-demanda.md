@@ -2,11 +2,11 @@
 
 ## Histórico de Versões
 
-| Data       | Versão | Descrição                                        | Autor        |
-| ---------- | ------- | -------------------------------------------------- | ------------ |
-| 18/04/2026 | 1.0     | Criação do documento de visão e adição do log | Prof Bezerra |
-|            |         |                                                    |              |
-|            |         |                                                    |              |
+| Data       | Versão | Descrição                                                      | Autor        |
+| ---------- | ------- | ---------------------------------------------------------------- | ------------ |
+| 18/04/2026 | 1.0     | Criação do documento de visão e adição do log               | Prof Bezerra |
+| 20/04/2026 | 1.1     | Adição da parte interessada para tratar o domínio de negócio | Prof Bezerra |
+|            |         |                                                                  |              |
 
 ## 1. Objetivo
 
@@ -26,13 +26,14 @@ Permitirá também o cidadão consultar as feiras livres de Fortaleza, bem como 
 
 ## 4. Partes Interessadas
 
-| Nome                 | Papel           | Responsabilidades                                       | Representante   |
-| -------------------- | --------------- | ------------------------------------------------------- | --------------- |
-| Secretaria Municipal | Cliente         | Gerenciar feiras, aprovar cadastros, emitir licenças   | Liliane Mdeiros |
-| Feirante             | Usuário final  | Solicitar licença, pagar taxas, participar das feiras  | Humberto        |
-| Fiscal Municipal     | Stakeholder     | Consultar feirantes autorizados, fiscalizar barracas    | José Silva     |
-| Equipe de TI         | Desenvolvimento | Implementar e manter o sistema                          | Equipe Lapis    |
-| Cidadão             | Comprador       | Cidadão que vai a feira livre para comprar mercadorias | Joana Darc      |
+| Nome                                    | Papel                 | Responsabilidades                                       | Representante   |
+| --------------------------------------- | --------------------- | ------------------------------------------------------- | --------------- |
+| Secretaria Municipal                    | Cliente               | Gerenciar feiras, aprovar cadastros, emitir licenças   | Liliane Mdeiros |
+| Feirante                                | Usuário final        | Solicitar licença, pagar taxas, participar das feiras  | Humberto        |
+| Fiscal Municipal                        | Stakeholder           | Consultar feirantes autorizados, fiscalizar barracas    | José Silva     |
+| Equipe de TI                            | Desenvolvimento       | Implementar e manter o sistema                          | Equipe Lapis    |
+| Cidadão                                | Comprador             | Cidadão que vai a feira livre para comprar mercadorias | Joana Darc      |
+| Setor Jurídico da Secretaria Municipal | Consultor de Negócio | Verificar a legislação sobre feiras livres            | Raimundo Nonato |
 
 ## 5. Personas
 
@@ -96,10 +97,10 @@ Sugestão: utilize mapas de histórias ou diagramas de caso de uso (UML) para il
 
 ## Checklist de Validação do Documento de Visão
 
-- [ ] O objetivo está claro e alinhado ao problema/necessidade?
-- [ ] A proposta de valor é mensurável e relevante?
-- [ ] Todas as partes interessadas estão listadas com papéis definidos?
-- [ ] Existem pelo menos duas personas descritas?
+- [X] O objetivo está claro e alinhado ao problema/necessidade?
+- [X] A proposta de valor é mensurável e relevante?
+- [X] Todas as partes interessadas estão listadas com papéis definidos?
+- [X] Existem pelo menos duas personas descritas?
 - [ ] Todas as necessidades e funcionalidades estão relacionadas a atores?
 - [ ] Há indicação de valor e frequência para cada funcionalidade?
 - [ ] A arquitetura está ilustrada (mesmo que de forma simples)?
