@@ -20,9 +20,20 @@ O sistema permitirá modernizar e digitalizar o controle das feiras livres munic
 
 ## 3. Descrição da Demanda
 
-O sistema apoiará a Secretaria na organização das feiras, cadastro e controle de [feirantes](./Glossario.md#feirante), registro de [barracas](./Glossario.md#barraca), pagamento de taxas, geração de relatórios e consulta por fiscais. Todo o processo será digital, com autenticação de usuários e histórico de alterações.
+O sistema apoiará a Secretaria na **organização das feiras:** 
+
+* cadastro e controle de [feirantes](./Glossario.md#feirante);
+* registro de [barracas](./Glossario.md#barraca);
+* cadastro de tipos de produtos;
+* pagamento de taxas;
+* geração de relatórios;
+* e consulta por fiscais.
+
+Todo o processo será digital, com autenticação de usuários e histórico de alterações.
 
 Permitirá também o cidadão consultar as feiras livres de Fortaleza, bem como o cadastro de feirantes e produtos.
+
+Não está no escopo dessa demanda a venda de produtos.
 
 ## 4. Partes Interessadas
 
