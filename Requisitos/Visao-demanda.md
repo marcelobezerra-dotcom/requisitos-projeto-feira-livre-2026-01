@@ -60,13 +60,13 @@ Não está no escopo dessa demanda a venda de produtos.
 
 ### 5.3. Gestor da Secretaria Municipal
 
-- **Descrição:** Servidor responsável por gerenciar feiras, aprovar cadastros, emitir licençass.
-- **Objetivo:** Realizar os cadastro básicos do sistema e fazer as aprovações do Cadastro.
+- **Descrição:** Servidor responsável por gerenciar feiras, aprovar cadastros, emitir licenças.
+- **Objetivo:** Realizar os cadastros básicos do sistema e fazer as aprovações dos Cadastros.
 
 ### 5.4. Cidadão
 
 - **Descrição:** Contribuinte que busca onde encontrar as feiras livres, feirantes e produtos.
-- **Objetivo:** Consultar rapidamente a lista de feiras, feirantes e produtos..
+- **Objetivo:** Consultar rapidamente a lista de feiras, feirantes e produtos.
 
 ## 6. Necessidades e Funcionalidades
 
