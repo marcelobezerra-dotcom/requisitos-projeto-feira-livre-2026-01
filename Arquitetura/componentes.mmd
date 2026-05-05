@@ -1,0 +1,84 @@
+flowchart TB
+
+%% =======================
+%% FRONTEND
+%% =======================
+subgraph Frontend
+    PortalGestor["Portal Gestor"]
+    InterfaceFiscal["Interface Fiscal"]
+    PortalCidadao["Portal Cidadão"]
+    AppFeirante["App Feirante (Futuro)"]
+end
+
+%% =======================
+%% BACKEND
+%% =======================
+subgraph Backend
+    APIRest["API REST"]
+
+    subgraph Modulos
+        ModAutenticacao["Autenticação"]
+        ModFeirantes["Feirantes"]
+        ModFeiras["Feiras"]
+        ModBarracas["Barracas"]
+        ModLicencas["Licenças/TPU"]
+        ModTaxas["Taxas"]
+        ModFiscalizacao["Fiscalização"]
+        ModRelatorios["Relatórios"]
+    end
+end
+
+%% =======================
+%% DATABASE
+%% =======================
+subgraph Database
+    BD["Banco de Dados Relacional"]
+
+    subgraph Tabelas
+        TblFeirantes["Feirantes"]
+        TblFeiras["Feiras"]
+        TblBarracas["Barracas"]
+        TblLicencas["Licenças"]
+        TblPagamentos["Pagamentos"]
+        TblUsuarios["Usuários"]
+        TblHistorico["Histórico"]
+    end
+end
+
+%% =======================
+%% EXTERNAL
+%% =======================
+subgraph External
+    SistemasPrefeitura["Sistemas Prefeitura"]
+    PortalSPU["Portal SPU Digital"]
+end
+
+%% =======================
+%% CONEXÕES
+%% =======================
+PortalGestor -->|HTTP/HTTPS| APIRest
+InterfaceFiscal -->|HTTP/HTTPS| APIRest
+PortalCidadao -->|HTTP/HTTPS| APIRest
+AppFeirante -->|HTTP/HTTPS| APIRest
+
+APIRest --> ModAutenticacao
+APIRest --> ModFeirantes
+APIRest --> ModFeiras
+APIRest --> ModBarracas
+APIRest --> ModLicencas
+APIRest --> ModTaxas
+APIRest --> ModFiscalizacao
+APIRest --> ModRelatorios
+
+APIRest -->|SQL| BD
+
+BD --> TblFeirantes
+BD --> TblFeiras
+BD --> TblBarracas
+BD --> TblLicencas
+BD --> TblPagamentos
+BD --> TblUsuarios
+BD --> TblHistorico
+
+APIRest -.->|Futuro| SistemasPrefeitura
+APIRest -.->|Futuro| PortalSPU

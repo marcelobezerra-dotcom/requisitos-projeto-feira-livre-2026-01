@@ -1,0 +1,104 @@
+@startuml Arquitetura_Componentes_Feiras_Livres
+!define FILEPATH(path) path
+
+title Arquitetura de Componentes - Sistema de Gestão de Feiras Livres de Fortaleza
+
+' Define estilos
+skinparam component {
+    BackgroundColor<<frontend>> #E1F5FF
+    BackgroundColor<<backend>> #F3E5F5
+    BackgroundColor<<database>> #E8F5E9
+    BackgroundColor<<external>> #FFF3E0
+    BorderColor #333
+    FontColor #000
+}
+
+skinparam package {
+    BackgroundColor #FAFAFA
+    BorderColor #666
+    FontColor #333
+}
+
+package "Apresentação (Frontend)" <<frontend>> {
+    component "Portal Gestor" as PortalGestor
+    component "Interface Fiscal" as InterfaceFiscal
+    component "Portal Cidadão" as PortalCidadao
+    component "App Feirante (Futuro)" as AppFeirante
+}
+
+package "Serviços de API (Backend)" <<backend>> {
+    component "API REST" as APIRest {
+        component "Módulo Autenticação" as ModAutenticacao
+        component "Módulo Feirantes" as ModFeirantes
+        component "Módulo Feiras" as ModFeiras
+        component "Módulo Barracas" as ModBarracas
+        component "Módulo Licenças" as ModLicencas
+        component "Módulo Taxas" as ModTaxas
+        component "Módulo Fiscalização" as ModFiscalizacao
+        component "Módulo Relatórios" as ModRelatorios
+    }
+}
+
+package "Persistência" <<database>> {
+    component "Banco de Dados Relacional" as BD {
+        component "Tabela Feirantes" as TblFeirantes
+        component "Tabela Feiras" as TblFeiras
+        component "Tabela Barracas" as TblBarracas
+        component "Tabela Licenças" as TblLicencas
+        component "Tabela Pagamentos" as TblPagamentos
+        component "Tabela Usuários" as TblUsuarios
+        component "Tabela Histórico" as TblHistorico
+    }
+}
+
+package "Sistemas Externos" <<external>> {
+    component "Sistemas Prefeitura" as SistemasPrefeitura
+    component "Portal SPU Digital" as PortalSPU
+}
+
+' Conexões Frontend -> Backend
+PortalGestor --> APIRest : HTTP/HTTPS
+InterfaceFiscal --> APIRest : HTTP/HTTPS
+PortalCidadao --> APIRest : HTTP/HTTPS
+AppFeirante --> APIRest : HTTP/HTTPS
+
+' Conexões Backend -> Banco de Dados
+APIRest --> BD : SQL
+
+' Conexões para Sistemas Externos
+APIRest -.-> SistemasPrefeitura : Integração futura
+APIRest -.-> PortalSPU : Integração futura
+
+note right of PortalGestor
+  Cadastro de feirantes
+  Gestão de feiras
+  Aprovação de licenças
+  Gestão de taxas
+  Relatórios
+end note
+
+note right of InterfaceFiscal
+  Consulta de feirantes
+  Validação de licenças
+  Registro de ocorrências
+end note
+
+note right of PortalCidadao
+  Consulta de feiras
+  Busca de feirantes
+  Consulta de produtos
+end note
+
+note right of ModAutenticacao
+  Login de usuários
+  Controle de perfis
+  Segurança de acesso
+end note
+
+note right of BD
+  Armazenamento de dados
+  Histórico de alterações
+  Integridade referencial
+end note
+
+@enduml
