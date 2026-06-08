@@ -1,18 +1,16 @@
 # Visão da Demanda (VD)
 
+> **Exemplo preenchido — Sistema de Gestão das Feiras Livres de Fortaleza**
+
 ## Histórico de Versões
 
-| Data       | Versão | Descrição                                                      | Autor        |
-| ---------- | ------- | ---------------------------------------------------------------- | ------------ |
-| 18/04/2026 | 1.0     | Criação do documento de visão e adição do log               | Prof Bezerra |
-| 20/04/2026 | 1.1     | Adição da parte interessada para tratar o domínio de negócio | Prof Bezerra |
-| 26/04/2026 | 1.2     | Definição das funcionalidades e arquietura proposta            | Prof Bezerra |
+| Data       | Versão | Descrição                                                                  | Autor        |
+| ---------- | ------ | -------------------------------------------------------------------------- | ------------ |
+| 12/04/2026 | 1.0    | Criação inicial do documento de visão para o Sistema de Gestão das Feiras Livres | Equipe Lapis |
 
 ## 1. Objetivo
 
-<img src="image/Visao-demanda/1776555009224.png" alt="1776555009224" width="20%">
-
-Definir a proposta de valor e o escopo do Sistema de Gestão das Feiras Livres de Fortaleza, detalhando as necessidades da Secretaria Municipal, dos [feirantes](./Glossario.md) e dos fiscais.
+Definir a proposta de valor e o escopo do Sistema de Gestão das Feiras Livres de Fortaleza, detalhando as necessidades da Secretaria Municipal, dos [feirantes](glossario-feira-livre.md#feirante) e dos fiscais.
 
 ## 2. Proposta de Valor
 
@@ -20,337 +18,341 @@ O sistema permitirá modernizar e digitalizar o controle das feiras livres munic
 
 ## 3. Descrição da Demanda
 
-O sistema apoiará a Secretaria na **organização das feiras:**
-
-* cadastro e controle de [feirantes](./Glossario.md#feirante);
-* registro de [barracas](./Glossario.md#barraca);
-* cadastro de tipos de produtos;
-* pagamento de taxas;
-* geração de relatórios;
-* e consulta por fiscais.
-
-Todo o processo será digital, com autenticação de usuários e histórico de alterações.
-
-Permitirá também o cidadão consultar as feiras livres de Fortaleza, bem como o cadastro de feirantes e produtos.
-
-Não está no escopo dessa demanda a venda de produtos.
+O sistema apoiará a Secretaria na organização das feiras, cadastro e controle de [feirantes](glossario-feira-livre.md#feirante), registro de [barracas](glossario-feira-livre.md#barraca), pagamento de taxas, geração de relatórios e consulta por fiscais. Todo o processo será digital, com autenticação de usuários e histórico de alterações.
 
 ## 4. Partes Interessadas
 
-| Nome                                    | Papel                 | Responsabilidades                                       | Representante   |
-| --------------------------------------- | --------------------- | ------------------------------------------------------- | --------------- |
-| Secretaria Municipal                    | Cliente               | Gerenciar feiras, aprovar cadastros, emitir licenças   | Liliane Mdeiros |
-| Feirante                                | Usuário final        | Solicitar licença, pagar taxas, participar das feiras  | Humberto        |
-| Fiscal Municipal                        | Stakeholder           | Consultar feirantes autorizados, fiscalizar barracas    | José Silva     |
-| Equipe de TI                            | Desenvolvimento       | Implementar e manter o sistema                          | Equipe Lapis    |
-| Cidadão                                | Comprador             | Cidadão que vai a feira livre para comprar mercadorias | Joana Darc      |
-| Setor Jurídico da Secretaria Municipal | Consultor de Negócio | Verificar a legislação sobre feiras livres            | Raimundo Nonato |
+| Nome                        | Papel           | Responsabilidades                                 | Representante           |
+|-----------------------------|-----------------|---------------------------------------------------|-------------------------|
+| Secretaria Municipal        | Cliente         | Gerenciar feiras, aprovar cadastros, emitir licenças | Ana Lima                |
+| Feirante                    | Usuário final   | Solicitar licença, pagar taxas, participar das feiras | -                       |
+| Fiscal Municipal            | Stakeholder     | Consultar feirantes autorizados, fiscalizar barracas | José Silva              |
+| Equipe de TI                | Desenvolvimento | Implementar e manter o sistema                      | Equipe Lapis            |
 
 ## 5. Personas
 
 ### 5.1. Feirante
-
 - **Descrição:** Trabalhador autônomo que comercializa produtos nas feiras municipais.
 - **Objetivo:** Conseguir licença, pagar taxas e participar das feiras de forma regularizada.
 
 ### 5.2. Fiscal Municipal
-
 - **Descrição:** Servidor responsável por fiscalizar o funcionamento das feiras e a regularidade dos feirantes.
 - **Objetivo:** Consultar rapidamente a lista de feirantes autorizados e registrar ocorrências.
 
-### 5.3. Gestor da Secretaria Municipal
-
-- **Descrição:** Servidor responsável por gerenciar feiras, aprovar cadastros, emitir licenças.
-- **Objetivo:** Realizar os cadastros básicos do sistema e fazer as aprovações dos Cadastros.
-
-### 5.4. Cidadão
-
-- **Descrição:** Contribuinte que busca onde encontrar as feiras livres, feirantes e produtos.
-- **Objetivo:** Consultar rapidamente a lista de feiras, feirantes e produtos.
-
 ## 6. Necessidades e Funcionalidades
 
-### Necessidade 1: Gerenciar cadastro de feirantes
+### Necessidade 1: Cadastro e controle de feirantes
+
+> **Nota:** Os termos [feirante](glossario-feira-livre.md#feirante) e [barraca](glossario-feira-livre.md#barraca) estão definidos no [glossário do projeto](glossario-feira-livre.md).
 
 #### F1.1 Cadastro de feirante
+- **Descrição:** Permite cadastrar [feirantes](glossario-feira-livre.md#feirante) com nome, CPF, produto e telefone.
+- **Incluída**
+- **Atores:** Secretaria Municipal
+- **Frequência:** Alta
+- **Valor:** Alto
 
-* **Descrição:** Permite cadastrar feirantes com dados pessoais, tipo de produto e informações da barraca.
-* **Incluída**
-* **Atores:** Gestor da Secretaria
-* **Frequência:** Alta
-* **Valor:** Alto
+#### F1.2 Atualização e remoção de cadastro
+- **Descrição:** Permite atualizar ou remover dados de feirantes.
+- **Incluída**
+- **Atores:** Secretaria Municipal
+- **Frequência:** Média
+- **Valor:** Médio
 
-#### F1.2 Atualizar cadastro de feirante
+### Necessidade 2: Organização das feiras e barracas
 
-* **Descrição:** Permite editar informações cadastrais dos feirantes.
-* **Incluída**
-* **Atores:** Gestor da Secretaria
-* **Frequência:** Alta
-* **Valor:** Alto
+#### F2.1 Registro de feiras por bairro
+- **Descrição:** Permite registrar feiras realizadas em cada bairro.
+- **Incluída**
+- **Atores:** Secretaria Municipal
+- **Frequência:** Média
+- **Valor:** Alto
 
-#### F1.3 Remover/Inativar feirante
+#### F2.2 Controle de barracas por feirante
+- **Descrição:** Permite associar uma [barraca](glossario-feira-livre.md#barraca) a cada [feirante](glossario-feira-livre.md#feirante) por feira.
+- **Incluída**
+- **Atores:** Secretaria Municipal
+- **Frequência:** Alta
+- **Valor:** Alto
 
-* **Descrição:** Permite excluir ou inativar feirantes do sistema.
-* **Incluída**
-* **Atores:** Gestor da Secretaria
-* **Frequência:** Média
-* **Valor:** Médio
+### Necessidade 3: Pagamento e controle de taxas
 
-#### F1.4 Consultar feirantes
+#### F3.1 Registro de pagamento de taxas
+- **Descrição:** Permite registrar pagamentos de taxas municipais pelos feirantes.
+- **Incluída**
+- **Atores:** Secretaria Municipal, Feirante
+- **Frequência:** Alta
+- **Valor:** Alto
 
-* **Descrição:** Permite consultar feirantes cadastrados com filtros.
-* **Incluída**
-* **Atores:** Fiscal, Gestor
-* **Frequência:** Alta
-* **Valor:** Alto
+#### F3.2 Geração de relatórios mensais de arrecadação
+- **Descrição:** Gera relatórios mensais de taxas arrecadadas por feira.
+- **Incluída**
+- **Atores:** Secretaria Municipal
+- **Frequência:** Mensal
+- **Valor:** Alto
 
-#### F1.5 Histórico de alterações
+### Necessidade 4: Fiscalização e consulta
 
-* **Descrição:** Registra alterações realizadas no cadastro de feirantes.
-* **Incluída**
-* **Atores:** Sistema / Gestor
-* **Frequência:** Alta
-* **Valor:** Alto
+#### F4.1 Consulta de feirantes autorizados
+- **Descrição:** Permite ao fiscal consultar lista de feirantes autorizados em uma feira.
+- **Incluída**
+- **Atores:** Fiscal Municipal
+- **Frequência:** Alta
+- **Valor:** Alto
 
----
+### Necessidade 5: Segurança, desempenho e conformidade
 
-### Necessidade 2: Gerenciar feiras livres
+#### F5.1 Autenticação de usuários
+- **Descrição:** Garante que apenas usuários autorizados acessem funções administrativas.
+- **Incluída**
+- **Atores:** Secretaria Municipal, Fiscal
+- **Frequência:** Sempre
+- **Valor:** Alto
 
-#### F2.1 Cadastro de feiras
+#### F5.2 Registro de histórico de alterações
+- **Descrição:** Mantém histórico de alterações nos cadastros de feirantes.
+- **Incluída**
+- **Atores:** Secretaria Municipal
+- **Frequência:** Sempre
+- **Valor:** Médio
 
-* **Descrição:** Permite cadastrar feiras com bairro, dia e horário.
-* **Incluída**
-* **Atores:** Gestor
-* **Frequência:** Média
-* **Valor:** Alto
+#### F5.3 Tempo de resposta das consultas
+- **Descrição:** Todas as consultas devem responder em até 3 segundos.
+- **Incluída**
+- **Atores:** Todos
+- **Frequência:** Sempre
+- **Valor:** Alto
 
-#### F2.2 Consultar feiras
+#### F5.4 Conformidade legal
+- **Descrição:** O sistema deve seguir a legislação municipal vigente.
+- **Incluída**
+- **Atores:** Secretaria Municipal
+- **Frequência:** Sempre
+- **Valor:** Alto
 
-* **Descrição:** Permite consultar feiras disponíveis na cidade.
-* **Incluída**
-* **Atores:** Cidadão, Fiscal
-* **Frequência:** Alta
-* **Valor:** Alto
-
-#### F2.3 Vincular feirantes à feira
-
-* **Descrição:** Permite associar feirantes autorizados a uma feira específica.
-* **Incluída**
-* **Atores:** Gestor
-* **Frequência:** Alta
-* **Valor:** Alto
-
----
-
-### Necessidade 3: Controle de barracas
-
-#### F3.1 Registro de barraca
-
-* **Descrição:** Permite cadastrar barraca vinculada ao feirante e à feira.
-* **Incluída**
-* **Atores:** Gestor
-* **Frequência:** Alta
-* **Valor:** Alto
-
----
-
-### Necessidade 4: Gestão de licenças
-
-#### F4.1 Solicitar licença (TPU)
-
-* **Descrição:** Permite ao feirante solicitar autorização para atuar em feira.
-* **Incluída**
-* **Atores:** Feirante
-* **Frequência:** Média
-* **Valor:** Alto
-
-#### F4.2 Aprovar/Reprovar licença
-
-* **Descrição:** Permite análise e aprovação do cadastro conforme regras da prefeitura.
-* **Incluída**
-* **Atores:** Gestor
-* **Frequência:** Alta
-* **Valor:** Alto
-
-#### F4.3 Validar feirante autorizado
-
-* **Descrição:** Permite verificar se o feirante possui licença válida.
-* **Incluída**
-* **Atores:** Fiscal
-* **Frequência:** Alta
-* **Valor:** Alto
-
----
-
-### Necessidade 5: Gestão de taxas
-
-#### F5.1 Registrar pagamento de taxa
-
-* **Descrição:** Permite registrar pagamentos realizados pelos feirantes.
-* **Incluída**
-* **Atores:** Gestor
-* **Frequência:** Alta
-* **Valor:** Alto
-
-#### F5.2 Consultar débitos
-
-* **Descrição:** Permite verificar taxas pendentes por feirante.
-* **Incluída**
-* **Atores:** Gestor, Feirante
-* **Frequência:** Alta
-* **Valor:** Alto
-
-#### F5.3 Validar pagamento para participação
-
-* **Descrição:** Permite verificar se o feirante está apto a participar da feira.
-* **Incluída**
-* **Atores:** Sistema / Fiscal
-* **Frequência:** Alta
-* **Valor:** Alto
-
----
-
-### Necessidade 6: Fiscalização
-
-#### F6.1 Consultar feirantes autorizados por feira
-
-* **Descrição:** Permite ao fiscal acessar lista de feirantes autorizados.
-* **Incluída**
-* **Atores:** Fiscal
-* **Frequência:** Alta
-* **Valor:** Alto
-
-#### F6.2 Registrar ocorrência
-
-* **Descrição:** Permite registrar irregularidades durante fiscalização.
-* **Incluída**
-* **Atores:** Fiscal
-* **Frequência:** Média
-* **Valor:** Alto
-
----
-
-### Necessidade 7: Relatórios
-
-#### F7.1 Relatório de arrecadação
-
-* **Descrição:** Gera relatório mensal das taxas arrecadadas.
-* **Incluída**
-* **Atores:** Gestor
-* **Frequência:** Mensal
-* **Valor:** Alto
-
-#### F7.2 Relatório de feirantes ativos
-
-* **Descrição:** Lista feirantes ativos por feira ou período.
-* **Incluída**
-* **Atores:** Gestor
-* **Frequência:** Alta
-* **Valor:** Médio
-
----
-
-### Necessidade 8: Acesso e segurança
-
-#### F8.1 Autenticação de usuários
-
-* **Descrição:** Permite login de usuários da prefeitura.
-* **Incluída**
-* **Atores:** Gestor, Fiscal
-* **Frequência:** Alta
-* **Valor:** Alto
-
-#### F8.2 Controle de perfis de acesso
-
-* **Descrição:** Define permissões conforme tipo de usuário.
-* **Incluída**
-* **Atores:** Sistema
-* **Frequência:** Alta
-* **Valor:** Alto
-
----
-
-### Necessidade 9: Consulta pública
-
-#### F9.1 Consultar feiras
-
-* **Descrição:** Permite ao cidadão visualizar feiras disponíveis.
-* **Incluída**
-* **Atores:** Cidadão
-* **Frequência:** Alta
-* **Valor:** Médio
-
-#### F9.2 Consultar feirantes e produtos
-
-* **Descrição:** Permite visualizar feirantes e produtos comercializados.
-* **Incluída**
-* **Atores:** Cidadão
-* **Frequência:** Média
-* **Valor:** Médio
-
----
 
 ## 7. Arquitetura da Demanda
 
-### Descrição da Arquitetura
+O sistema será composto por módulos de Cadastro de Feirantes, Gestão de Feiras, Controle de Barracas, Pagamento de Taxas, Relatórios e Fiscalização. Utilizará banco de dados relacional e será acessível via navegadores web modernos. Integração com sistemas da prefeitura para validação de licenças e hospedagem em servidores próprios.
 
-O sistema será uma aplicação web composta por três camadas principais:
+### 7.1. Diagramas UML
 
-#### 1. Frontend (Interface Web)
+#### 7.1.1. Diagrama de Caso de Uso
 
-* Acesso via navegador
-* Interfaces para:
-* Gestor da Secretaria
-* Fiscal
-* Feirante (opcional futuro)
-* Cidadão (consulta pública)
+Ilustra os atores (Secretaria Municipal, Feirante e Fiscal) e suas interações com os principais casos de uso do sistema.
+
+```mermaid
+flowchart LR
+  SM(["👤 Secretaria\nMunicipal"])
+  F(["👤 Feirante"])
+  FI(["👤 Fiscal"])
+
+  subgraph SistemaSecretaria["Secretaria Municipal"]
+    UC1(["Cadastrar Feirante"])
+    UC2(["Atualizar/Remover Feirante"])
+    UC3(["Registrar Feira"])
+    UC4(["Associar Barraca a Feirante"])
+    UC5(["Registrar Pagamento de Taxa"])
+    UC6(["Gerar Relatórios"])
+    UC7(["Emitir Licença"])
+    UC8(["Autenticar Usuário"])
+    UC9(["Consultar Histórico de Alterações"])
+    UC10(["Configurar Feira"])
+  end
+
+  subgraph SistemaFeirante["Feirante"]
+    UC11(["Pagar Taxa"])
+    UC12(["Solicitar Licença"])
+    UC13(["Consultar Próxima Feira"])
+  end
+
+  subgraph SistemaFiscal["Fiscal"]
+    UC14(["Consultar Feirantes Autorizados"])
+  end
+
+  SM --> UC1
+  SM --> UC2
+  SM --> UC3
+  SM --> UC4
+  SM --> UC5
+  SM --> UC6
+  SM --> UC7
+  SM --> UC8
+  SM --> UC9
+  SM --> UC10
+
+  F --> UC11
+  F --> UC12
+  F --> UC13
+
+  FI --> UC14
+  FI --> UC8
+
+  UC12 -. include .-> UC1
+  UC5 -. include .-> UC11
+```
+
+#### 7.1.2. Diagrama de Componentes
+
+Descreve os principais componentes do sistema e suas dependências.
+
+```mermaid
+graph TB
+    subgraph Cliente["🖥️ Cliente - Navegador Web"]
+        UI["Interface de Usuário<br/>HTML/CSS/JavaScript"]
+    end
+    
+    subgraph Servidor["⚙️ Servidor de Aplicação"]
+        Auth["Módulo de<br/>Autenticação"]
+        Cadastro["Módulo de<br/>Cadastro de Feirantes"]
+        Gestao["Módulo de<br/>Gestão de Feiras"]
+        Barracas["Módulo de<br/>Controle de Barracas"]
+        Taxas["Módulo de<br/>Pagamento de Taxas"]
+        Relatorios["Módulo de<br/>Relatórios"]
+        Fiscalizacao["Módulo de<br/>Fiscalização"]
+        Historico["Módulo de<br/>Histórico de Alterações"]
+        API["API REST"]
+    end
+    
+    subgraph Dados["💾 Persistência de Dados"]
+        BD["Banco de Dados<br/>Relacional"]
+    end
+    
+    subgraph Externo["🔗 Sistemas Externos"]
+        Prefeitura["API da Prefeitura<br/>Validação de Licenças"]
+    end
+    
+    UI --> API
+    API --> Auth
+    API --> Cadastro
+    API --> Gestao
+    API --> Barracas
+    API --> Taxas
+    API --> Relatorios
+    API --> Fiscalizacao
+    
+    Auth --> BD
+    Cadastro --> BD
+    Gestao --> BD
+    Barracas --> BD
+    Taxas --> BD
+    Relatorios --> BD
+    Fiscalizacao --> BD
+    Historico --> BD
+    
+    Cadastro --> Historico
+    Barracas --> Historico
+    Taxas --> Historico
+    
+    Cadastro --> Prefeitura
+    Gestao --> Prefeitura
+```
+
+**Componentes principais:**
+- **Interface de Usuário** — Aplicação web responsiva acessível em navegadores modernos
+- **Módulo de Autenticação** — Garante acesso seguro aos usuários
+- **Módulos de Negócio** — Cadastro, Gestão, Barracas, Taxas, Relatórios, Fiscalização
+- **Módulo de Histórico** — Registra todas as alterações nos cadastros
+- **API REST** — Orquestra a comunicação entre cliente e servidor
+- **Banco de Dados Relacional** — Armazena todos os dados do sistema
+- **API da Prefeitura** — Integração para validação de licenças e dados cadastrais
+
+#### 7.1.3. Diagrama de Implantação
+
+Mostra como os componentes serão distribuídos nos ambientes de execução.
+
+```mermaid
+graph TB
+    subgraph Cliente["📱 Camada Cliente"]
+        Browser["🌐 Navegadores Web<br/>Secretaria, Feirantes, Fiscais"]
+    end
+    
+    subgraph Rede["🌐 Rede"]
+        LB["Load Balancer<br/>Distribuição de Tráfego"]
+    end
+    
+    subgraph Servidores["⚙️ Camada de Aplicação"]
+        WS1["Servidor Web 1<br/>Apache/Nginx"]
+        APP1["Servidor App 1<br/>Node.js/Python/Java"]
+        WS2["Servidor Web 2<br/>Apache/Nginx"]
+        APP2["Servidor App 2<br/>Node.js/Python/Java"]
+    end
+    
+    subgraph Dados["💾 Camada de Dados"]
+        BDPRINCIPAL["Banco de Dados Principal<br/>PostgreSQL/MySQL"]
+        BDREPLICA["Banco de Dados Réplica<br/>Backup/HA"]
+    end
+    
+    subgraph Backup["💿 Armazenamento"]
+        Storage["Storage<br/>Backups e Arquivos"]
+    end
+    
+    subgraph Externo["🔗 Integração Externa"]
+        API_Prefeitura["API da Prefeitura<br/>Validação de Licenças"]
+    end
+    
+    Browser -->|HTTP/HTTPS| LB
+    LB --> WS1
+    LB --> WS2
+    WS1 --> APP1
+    WS2 --> APP2
+    APP1 --> BDPRINCIPAL
+    APP2 --> BDPRINCIPAL
+    BDPRINCIPAL --> BDREPLICA
+    APP1 --> Storage
+    APP2 --> Storage
+    APP1 --> API_Prefeitura
+    APP2 --> API_Prefeitura
+```
+
+**Ambiente de execução:**
+- **Camada Cliente** — Navegadores web dos usuários (Secretaria, Feirantes, Fiscais)
+- **Load Balancer** — Distribui requisições entre servidores web
+- **Servidores Web** — Hospedam a aplicação (com redundância)
+- **Servidores de Aplicação** — Processam lógica de negócio (com redundância)
+- **Banco de Dados Principal** — Armazena dados operacionais
+- **Banco de Dados Réplica** — Backup e alta disponibilidade
+- **Storage** — Armazena arquivos e backups do sistema
+- **API da Prefeitura** — Integração externa via HTTPS
+
+### Mapa de Histórias de Usuário
+
+```mermaid
+journey
+    title Mapa de Histórias de Usuário — Feira Livre
+    section Secretaria Municipal
+      Cadastrar feirante: 5
+      Atualizar/remover feirante: 4
+      Registrar feira: 4
+      Associar barraca a feirante: 4
+      Registrar pagamento de taxa: 4
+      Gerar relatórios: 3
+      Emitir licença: 4
+      Autenticar usuário: 5
+      Consultar histórico de alterações: 3
+      Configurar feira: 3
+    section Feirante
+      Solicitar licença: 5
+      Pagar taxa: 5
+      Consultar próxima feira: 3
+    section Fiscal
+      Consultar feirantes autorizados: 5
+      Autenticar usuário: 5
+```
 
 ---
-
-#### 2. Backend (API)
-
-Responsável pela lógica de negócio e regras do sistema:
-
-* Módulo de Cadastro de Feirantes
-* Módulo de Gestão de Feiras
-* Módulo de Licenciamento
-* Módulo de Taxas
-* Módulo de Fiscalização
-* Módulo de Relatórios
-* Módulo de Autenticação e Controle de Acesso
-
----
-
-#### 3. Banco de Dados Relacional
-
-Armazena informações como:
-
-* Feirantes
-* Feiras
-* Barracas
-* Licenças
-* Pagamentos
-* Usuários
-* Histórico de alterações
-
----
-
-### Integrações
-
-* Possível integração futura com sistemas da prefeitura (ex: licenciamento e arrecadação)
-* Uso de API REST para comunicação entre frontend e backend
 
 ## Checklist de Validação do Documento de Visão
 
-- [X] O objetivo está claro e alinhado ao problema/necessidade?
-- [X] A proposta de valor é mensurável e relevante?
-- [X] Todas as partes interessadas estão listadas com papéis definidos?
-- [X] Existem pelo menos duas personas descritas?
-- [X] Todas as necessidades e funcionalidades estão relacionadas a atores?
-- [X] Há indicação de valor e frequência para cada funcionalidade?
-- [ ] A arquitetura está ilustrada (mesmo que de forma simples)?
-- [ ] O documento está escrito em linguagem clara e objetiva?
+- [x] O objetivo está claro e alinhado ao problema/necessidade?
+- [x] A proposta de valor é mensurável e relevante?
+- [x] Todas as partes interessadas estão listadas com papéis definidos?
+- [x] Existem pelo menos duas personas descritas?
+- [x] Todas as necessidades e funcionalidades estão relacionadas a atores?
+- [x] Há indicação de valor e frequência para cada funcionalidade?
+- [x] A arquitetura está ilustrada com os diagramas UML (Caso de Uso, Componentes e Implantação)?
+- [x] O documento está escrito em linguagem clara e objetiva?
 
 ---
 
-> Consulte exemplos e dicas em: [Guia de Elaboração da Visão](../../../Elicitacao/VisaoDemanda.md)
+> Consulte exemplos e dicas em: [Guia de Elaboração da Visão](../../Elicitacao/VisaoDemanda.md)
